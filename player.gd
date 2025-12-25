@@ -21,10 +21,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		
 	# Handles respawn.
-	func respawn():
+	if global_position.y > 2000:
 		get_tree().reload_current_scene()
-	if position.y < 200:
-		respawn()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
